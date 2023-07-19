@@ -9,5 +9,6 @@ public class Event {
     private Integer id;
     private String name;
     private String location;
-    private Timestamp time;
+    private Timestamp startAt;
+    private Timestamp endAt;
 }
