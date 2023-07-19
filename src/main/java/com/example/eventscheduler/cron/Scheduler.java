@@ -23,12 +23,12 @@ public class Scheduler {
      */
     @Scheduled(cron = "0 0 * * * *", zone = "GMT+5:30")
     public void removeScheduler() {
-        if(!pastEventIds.isEmpty()) {
+        if (!pastEventIds.isEmpty()) {
             for (Long id : pastEventIds) {
                 log.info("deleting event at 12 am everyday if available");
                 try {
                     eventMapper.deleteEventById(id);
-                }catch (Exception e) {
+                } catch (Exception e) {
                     log.info("exception in event deletion from database id {} ", id);
                 }
             }
